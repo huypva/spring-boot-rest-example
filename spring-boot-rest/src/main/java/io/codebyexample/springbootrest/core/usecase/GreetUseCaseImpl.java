@@ -1,8 +1,6 @@
 package io.codebyexample.springbootrest.core.usecase;
 
 import io.codebyexample.springbootrest.core.entity.Greeting;
-import io.codebyexample.springbootrest.dataprovider.id.IdProvider;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,12 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class GreetUseCaseImpl implements GreetUseCase {
 
-  @Autowired
-  IdProvider idProvider;
-
   @Override
-  public Greeting greet(String name) {
-    int randId = idProvider.genId();
-    return new Greeting(randId, String.format("Hello %s!", name));
+  public Greeting greet(int userId, String name) {
+    return new Greeting(userId, String.format("Hello %s!", name));
   }
 }

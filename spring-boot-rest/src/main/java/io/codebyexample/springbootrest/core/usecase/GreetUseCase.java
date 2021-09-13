@@ -8,5 +8,5 @@ import io.codebyexample.springbootrest.core.entity.Greeting;
  */
 public interface GreetUseCase {
 
-  Greeting greet(String name);
+  Greeting greet(int userId, String name);
 }
