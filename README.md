@@ -9,7 +9,7 @@ The example project for StringBoot service
 ## Project structure
 ```
 .
-├── hello-world
+├── spring-boot-rest
 │   ├── Dockerfile
 │   ...
 ├── docker-compose.yaml
@@ -32,8 +32,8 @@ The example project for StringBoot service
 - Build project
 ```shell script
 $ ./mvnw clean package
-$ cd hello-word
-$ ./mvnw spring-boot:run
+$ cd spring-boot-rest
+$ ../mvnw spring-boot:run
 ...
 ```
 
@@ -41,15 +41,39 @@ $ ./mvnw spring-boot:run
 
 - Start project
 ```shell script
-docker-compose up -d
+$ docker-compose up -d
 ```
 
 - Stop project
 ```shell script
-docker-compose down
+$ docker-compose down
 ```
 
 ## Run testing
+
+- Send get request
+```shell script
+$ curl http://localhost:8081/api/get-mapping
+{"id":0,"message":"Hello GetMapping!"}
+```
+
+- Send post request with path variable
+```shell script
+$ curl -X POST http://localhost:8081/api/path-variable/1
+{"id":1,"message":"Hello PathVariable!"}
+```
+
+- Send post request with request param
+```shell script
+$ curl -X POST http://localhost:8081/api/request-param?user_id=1
+{"id":1,"message":"Hello RequestParam!"}
+```
+
+- Send post request with request body
+```shell script
+$ curl -H "Content-Type: application/json" -X POST -d '{"user_id":"1"}' \http://localhost:8081/api/request-body
+{"id":1,"message":"Hello RequestBody!"}
+```
 
 ## Contribute
 

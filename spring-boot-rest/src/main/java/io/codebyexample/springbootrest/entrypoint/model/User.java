@@ -1,5 +1,6 @@
 package io.codebyexample.springbootrest.entrypoint.model;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class User {
 
+  @JsonAlias("user_id")
   private int userId;
 
 }
