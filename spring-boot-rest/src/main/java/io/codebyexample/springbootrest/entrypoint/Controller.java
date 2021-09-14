@@ -27,12 +27,12 @@ public class Controller {
     return greetUseCase.greet(0, "GetMapping");
   }
 
-  @PostMapping("/path-variable/{user_id}")
+  @GetMapping("/path-variable/{user_id}")
   public Greeting pathVariable(@PathVariable(name = "user_id") int userId) {
     return greetUseCase.greet(userId, "PathVariable");
   }
 
-  @PostMapping("/request-param")
+  @GetMapping("/request-param")
   public Greeting requestParam(@RequestParam(name = "user_id") int userId) {
     return greetUseCase.greet(userId, "RequestParam");
   }

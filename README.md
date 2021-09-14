@@ -53,25 +53,25 @@ $ docker-compose down
 
 - Send get request
 ```shell script
-$ curl http://localhost:8081/api/get-mapping
+$ curl -X GET http://localhost:8081/api/get-mapping
 {"id":0,"message":"Hello GetMapping!"}
 ```
 
 - Send post request with path variable
 ```shell script
-$ curl -X POST http://localhost:8081/api/path-variable/1
+$ curl -X GET http://localhost:8081/api/path-variable/1
 {"id":1,"message":"Hello PathVariable!"}
 ```
 
 - Send post request with request param
 ```shell script
-$ curl -X POST http://localhost:8081/api/request-param?user_id=1
+$ curl -X GET http://localhost:8081/api/request-param?user_id=1
 {"id":1,"message":"Hello RequestParam!"}
 ```
 
 - Send post request with request body
 ```shell script
-$ curl -H "Content-Type: application/json" -X POST -d '{"user_id":"1"}' \http://localhost:8081/api/request-body
+$ curl -X POST -H "Content-Type: application/json" -d '{"user_id":"1"}' \http://localhost:8081/api/request-body
 {"id":1,"message":"Hello RequestBody!"}
 ```
 
