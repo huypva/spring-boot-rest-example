@@ -1,9 +1,22 @@
 version: "3.4"
 services:
-  spring-boot-rest:
-    build: spring-boot-rest
-    container_name: 'spring-boot-rest'
+  spring-boot-rest-client:
+    build: spring-boot-rest-client
+    container_name: 'spring-boot-rest-client'
     environment:
       - spring_profiles_active=docker
     ports:
       - 8081:8081
+    networks:
+      - spring-boot-rest
+  spring-boot-rest-server:
+    build: spring-boot-rest-server
+    container_name: 'spring-boot-rest-server'
+    environment:
+      - spring_profiles_active=docker
+    ports:
+      - 8082:8082
+    networks:
+      - spring-boot-rest
+networks:
+  spring-boot-rest:
