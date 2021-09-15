@@ -1,0 +1,2 @@
+greeingservice:
+  url: http://spring-boot-rest-server:8082

@@ -10,7 +10,8 @@
     <name>Parent</name>
 
     <modules>
-        <module>spring-boot-rest</module>
+        <module>spring-boot-rest-client</module>
+        <module>spring-boot-rest-server</module>
     </modules>
 
     <build>

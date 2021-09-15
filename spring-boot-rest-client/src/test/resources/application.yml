@@ -1,0 +1,10 @@
+server:
+  port : 8081
+spring:
+  profiles:
+    active: local
+  application:
+    name: "spring-boot-rest-client"
+
+greeingservice:
+  url: http://localhost:8082
