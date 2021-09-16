@@ -5,5 +5,10 @@ spring:
     active: local
   application:
     name: "hello-word"
-greeingservice:
+greeting-service:
   url: http://localhost:8082
+  path:
+    get-mapping: /api/get-mapping
+    path-variable: /api/path-variable/{user_id}
+    request-param: /api/request-param
+    request-body: /api/request-body

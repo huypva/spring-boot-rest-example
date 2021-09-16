@@ -116,3 +116,4 @@ $ curl -X POST http://localhost:8082/api/request-body -H "Content-Type: applicat
 ## Contribute
 
 ## Reference
+- https://www.baeldung.com/spring-cloud-openfeign
